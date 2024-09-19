@@ -1,0 +1,25 @@
+h1 {
+    border-bottom: 2px solid black;
+}
+
+table {
+    border: 1px solid grey;
+    background-color: ghostwhite;
+    float: right;
+    padding: 5px;
+    width: 350px;
+}
+
+.infobox-header {
+    background-color: antiquewhite;
+    justify-content: center;
+}
+
+.infobox-image {
+    text-align: center;
+}
+
+.infobox-list {
+    text-align: left;
+    vertical-align: top;
+}
