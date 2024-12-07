@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 4</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="sidebar offcanvas-md offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvas-label">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="sidebar-body">
+                <div class="sidebar-header">
+                    <div class="sidebar-brand">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_23_1733)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.2 0H12.8V8.27451L6.94904 2.42355L2.42355 6.94902L8.27453 12.8H0V19.2H8.27451L2.42355 25.0509L6.94904 29.5765L12.8 23.7254V32H19.2V23.7254L25.051 29.5765L29.5765 25.051L23.7254 19.2H32V12.8H23.7254L29.5765 6.94902L25.051 2.42354L19.2 8.27451V0Z" fill="#0D1421"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_23_1733">
+                            <rect width="32" height="32" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <h2 class="offcanvas-title" id="offcanvas-label">Вариант 4</h2>
+                    </div>
+                    <input type="text" class="sidebar-search" placeholder="Поиск" id="card-search">
+                </div>
+                <div class="btn-group sidebar-navigation-content" id="category-list">
+                    <input type="radio" class="btn-check" id="all-news" name="btnradio" value="all" checked>
+                    <label for="all-news" class="navigation-content-item">Все новости</label>
+
+                    <input type="radio" class="btn-check" id="sport" name="btnradio" value="sport">
+                    <label for="sport" class="navigation-content-item">Спорт</label>
+
+                    <input type="radio" class="btn-check" id="society" name="btnradio" value="society">
+                    <label for="society" class="navigation-content-item">Общество</label>
+
+                    <input type="radio" class="btn-check" id="economy" name="btnradio" value="economy">
+                    <label for="economy" class="navigation-content-item">Экономика</label>
+                </div>
+            </div>
+            <footer>
+                <span class="sidebar-footer-text">
+                    &copy; Вариант 4. Добрынин Сергей, группа ПИ-22-2
+                </span>
+            </footer>
+        </div>
+    </div>
+    <header class="page-header">
+        <div class="page-header-brand navbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h1>Все контакты</h1>
+        </div>
+        <div class="dropdown" id="date-dropdown">
+            <button type="button" class="btn dropdown-toggle rounded-3" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,4">
+                <span id="dropdown-text">По умолчанию</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="#354153" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" id="date-list">
+                <li><button class="dropdown-item" value="default">По умолчанию</button></li>
+                <li><button class="dropdown-item" value="new-first">Сначала новые</button></li>
+                <li><button class="dropdown-item" value="old-first">Сначала старые</button></li>
+            </ul>
+          </div>
+    </header>
+    <main>
+        <div id="preloader">
+            <div class="spinner"></div>
+        </div>
+        <section class="cards-container" id="cards-container">
+            
+        </section>
+    </main>
+
+    <script src="bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

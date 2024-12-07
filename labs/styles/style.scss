@@ -1,0 +1,330 @@
+@import "../bootstrap-5.3.3/scss/functions";
+
+$offcanvas-horizontal-width: 280px;
+$dropdown-link-hover-color: rgba(0, 0, 0, 1);
+$dropdown-link-hover-bg: rgba(242, 244, 247, 1);
+$dropdown-link-active-color: rgba(0, 0, 0, 1);
+$dropdown-link-active-bg: rgba(232, 234, 237, 1);
+
+@import "../bootstrap-5.3.3/scss/variables";
+@import "../bootstrap-5.3.3/scss/variables-dark";
+@import "../bootstrap-5.3.3/scss/maps";
+@import "../bootstrap-5.3.3/scss/mixins";
+@import "../bootstrap-5.3.3/scss/root";
+
+@import "../bootstrap-5.3.3/scss/offcanvas";
+@import "../bootstrap-5.3.3/scss/reboot";
+@import "../bootstrap-5.3.3/scss/close";
+@import "../bootstrap-5.3.3/scss/navbar";
+@import "../bootstrap-5.3.3/scss/dropdown";
+@import "../bootstrap-5.3.3/scss/buttons";
+@import "../bootstrap-5.3.3/scss/button-group";
+@import "../bootstrap-5.3.3/scss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    grid-template-columns: $offcanvas-horizontal-width 1fr;
+    grid-template-rows: 96px 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar content";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    border-right: 1px solid rgba(234, 236, 240, 1);
+    padding: 32px 16px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $offcanvas-horizontal-width;
+}
+
+.offcanvas-header {
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    right: 24px;
+}
+
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    height: 100vh;
+}
+
+.sidebar-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 8px;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sidebar-brand h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: rgba(53, 65, 83, 1);
+}
+
+.sidebar-search {
+    padding: 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(234, 236, 240, 1);
+    box-sizing: border-box;
+    height: 36px;
+    max-width: 232px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.sidebar-navigation-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.navigation-content-item {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+    height: 40px;
+    padding: 8px 8px 8px 24px;
+    border: none;
+    color: rgba(53, 65, 83, 1);
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.btn-check {
+    display: none;
+}
+
+.btn-check:checked + .navigation-content-item {
+    height: 36px;
+    padding: 6px 8px;
+    color: rgba(13, 20, 33, 1);
+    background-color: rgba(242, 244, 247, 1);
+}
+
+.offcanvas-body footer {
+    padding: 32px 30% 0 8px;
+}
+
+.sidebar-footer-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(102, 112, 133, 1);
+}
+
+.btn-close, .navbar-toggler {
+    box-shadow: none !important;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.page-header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    min-width: max-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    padding: 32px 32px 24px 32px;
+    border-bottom: 1px solid rgba(234, 236, 240, 1);
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1;
+}
+
+.page-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.page-header-brand h1 {
+    margin: 0;
+    font-size: 31.5px;
+    font-weight: 600;
+    line-height: 40px;
+    color: rgba(13, 20, 33, 1);
+}
+
+.dropdown {
+    border: 1px solid rgba(234, 236, 240, 1);
+    border-radius: 8px;
+}
+
+.dropdown-toggle {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgba(53, 65, 83, 1);
+    border: none;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    width: 230px;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(234, 236, 240, 1);
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-item {
+    padding: 6px 16px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(53, 65, 83, 1);
+}
+
+main {
+    grid-area: content;
+    position: relative;
+}
+
+.cards-container {
+    margin: 24px 0 24px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 370px);
+    gap: 32px;
+}
+
+.card {
+    height: 600px;
+    border-radius: 8px;
+    border: 1px solid rgba(234, 236, 240, 1);
+}
+
+.card .card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 100%;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-info span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(102, 112, 133, 1);
+}
+
+.card .card-title {
+    margin: 0;
+    width: 96%;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    color: rgba(13, 20, 33, 1);
+}
+
+.card .card-text {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(53, 65, 83, 1);
+}
+
+#preloader {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    border: 8px solid rgba(220, 220, 220, 1);
+    border-radius: 50%;
+    border-top-color: rgba(30, 30, 30, 1);
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@include media-breakpoint-down(md) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "content";
+    }
+    
+    .page-header-brand h1 {
+        font-size: 1.45rem;
+    }
+
+    .cards-container {
+        margin: 24px 0;
+        justify-content: center;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
